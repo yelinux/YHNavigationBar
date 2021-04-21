@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.name         = 'YHNavigationBar'
     s.version      = '1.0.0'
-    s.summary      = 'An UINavigationController's obj enable fullscreen pop gesture.'
+    s.summary      = 'An UINavigationController obj enable fullscreen pop gesture.'
     s.description  = <<-DESC
-        An UINavigationController's obj enable fullscreen pop gesture, and easy control hidden or not.
+        An UINavigationController obj enable fullscreen pop gesture, and easy control hidden or not.
                    DESC
     s.homepage     = 'https://github.com/yelinux/YHNavigationBar'
     s.license      = { :type => "MIT", :file => 'LICENSE' }
