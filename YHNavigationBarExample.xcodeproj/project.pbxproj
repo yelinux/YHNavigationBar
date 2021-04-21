@@ -106,6 +106,7 @@
 		8125699A262D150A00B8758D = {
 			isa = PBXGroup;
 			children = (
+				81256A1C262D724C00B8758D /* YHNavigationBar */,
 				812569A5262D150A00B8758D /* YHNavigationBarExample */,
 				812569C1262D150D00B8758D /* YHNavigationBarExampleTests */,
 				812569CC262D150D00B8758D /* YHNavigationBarExampleUITests */,
@@ -127,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				81CD2602262FCC84004741B9 /* Example */,
-				81256A1C262D724C00B8758D /* YHNavigationBar */,
 				812569A6262D150A00B8758D /* AppDelegate.h */,
 				812569A7262D150A00B8758D /* AppDelegate.m */,
 				812569B2262D150D00B8758D /* Assets.xcassets */,
