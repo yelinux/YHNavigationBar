@@ -31,7 +31,24 @@ isHiddenNavgationBar:(BOOL)isHidden
     vc.title = title;
     vc.yh_prefersNavigationBarHidden = isHidden;
     YHNavigationController *nav = [[YHNavigationController alloc] initWithRootViewController:vc];
-    nav.navigationBar.translucent = translucent;
+    nav.navigationBar.translucent = translucent;//是否透明
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearnace = [[UINavigationBarAppearance alloc] init];
+        [appearnace configureWithOpaqueBackground];
+        appearnace.backgroundColor = UIColor.blueColor;//背景色
+//        appearnace.backgroundImage
+        appearnace.titleTextAttributes = @{NSForegroundColorAttributeName:UIColor.redColor};//标题文本样式
+        appearnace.shadowColor = UIColor.redColor;//分割线颜色
+        nav.navigationBar.standardAppearance = appearnace;
+        nav.navigationBar.scrollEdgeAppearance = appearnace;
+    } else {
+        // Fallback on earlier versions
+        [nav.navigationBar setBarTintColor:UIColor.blueColor];//背景色
+//        [nav.navigationBar setTintColor:UIColor.blueColor];//默认返回按钮颜色
+        [nav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}];//标题文本样式
+        [nav.navigationBar setShadowImage:[self imageWithColor:UIColor.redColor]];//分割线颜色
+    }
+    
     [self addChildViewController:nav];
 }
 
@@ -43,7 +60,19 @@ isHiddenNavgationBar:(BOOL)isHidden
     return [self.selectedViewController supportedInterfaceOrientations];
 }
 
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
 
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return image;
+}
 
 /*
 #pragma mark - Navigation

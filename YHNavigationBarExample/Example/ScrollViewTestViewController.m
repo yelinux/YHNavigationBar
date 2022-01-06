@@ -38,6 +38,8 @@
     UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     lb.backgroundColor = UIColor.redColor;
     lb.text = @"label";
+    lb.userInteractionEnabled = YES;
+    [lb addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickClose)]];
     [scrollView addSubview:lb];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
@@ -50,6 +52,33 @@
     } else {
         self.yh_interactivePopType = YHViewControllerInteractivePopTypeNone;
     }
+}
+
+-(void)clickClose{
+    UIInterfaceOrientation interfaceOritation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (interfaceOritation == UIInterfaceOrientationPortrait) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self setInterfaceOrientation:UIInterfaceOrientationPortrait];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    }
+}
+
+//强制转屏（这个方法最好放在BaseVController中）
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation{
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        SEL selector  = NSSelectorFromString(@"setOrientation:");
+//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+//        [invocation setSelector:selector];
+//        [invocation setTarget:[UIDevice currentDevice]];
+//        // 从2开始是因为前两个参数已经被selector和target占用
+//        [invocation setArgument:&orientation atIndex:2];
+//        [invocation invoke];
+//    }
+    [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationUnknown) forKey:@"orientation"];
+    [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
 }
 
 //兼容横屏
