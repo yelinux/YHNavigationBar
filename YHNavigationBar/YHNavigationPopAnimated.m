@@ -27,27 +27,27 @@
     
     [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
     
-    CGFloat screenW = containerView.bounds.size.width;
-    CGFloat screenH = containerView.bounds.size.height;
+    CGFloat fromW = fromViewController.view.bounds.size.width;
+    CGFloat fromH = fromViewController.view.bounds.size.height;
     
-    CGFloat y = 0;
-    if (!toViewController.navigationController.navigationBar.translucent) {
-        if (!toViewController.yh_prefersNavigationBarHidden) {
-            y += toViewController.navigationController.navigationBar.frame.size.height;
-        }
-        if (!fromViewController.yh_prefersNavigationBarHidden) {
-            if (@available(iOS 11.0, *)) {
-                y += [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
-            }
-        }
-    }
+    CGFloat toW = toViewController.view.bounds.size.width;
+    CGFloat toH = toViewController.view.bounds.size.height;
+    CGFloat toX = - (0.3 * toW);
+    CGFloat toY = toViewController.view.frame.origin.y;
+    
+//    if (!toViewController.navigationController.navigationBar.translucent) {
+//        if (!toViewController.yh_prefersNavigationBarHidden && fromViewController.yh_prefersNavigationBarHidden) {
+//            toY += toViewController.navigationController.navigationBar.frame.size.height;
+//            toH -= toViewController.navigationController.navigationBar.frame.size.height;
+//        }
+//    }
     
     __block UIView *toView = toViewController.view;
-    toView.frame = CGRectMake(- (0.3 * screenW), y, screenW, screenH);
+    toView.frame = CGRectMake(toX, toY, toW, toH);
     
     [UIView animateWithDuration:TransitionDuration animations:^{
-        fromViewController.view.frame = CGRectMake(screenW, fromViewController.view.frame.origin.y, screenW, screenH);
-        toView.frame = CGRectMake(0, y, screenW, screenH);
+        fromViewController.view.frame = CGRectMake(fromW, fromViewController.view.frame.origin.y, fromW, fromH);
+        toView.frame = CGRectMake(0, toY, toW, toH);
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
     }];

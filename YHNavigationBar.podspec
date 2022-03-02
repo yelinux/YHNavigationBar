@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'YHNavigationBar'
-    s.version      = '1.0.0'
+    s.version      = '1.0.1'
     s.summary      = 'An UINavigationController obj enable fullscreen pop gesture.'
     s.description  = <<-DESC
         An UINavigationController obj enable fullscreen pop gesture, and easy control hidden or not.
