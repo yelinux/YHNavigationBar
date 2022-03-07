@@ -6,7 +6,6 @@
 //
 
 #import "YHNavigationDelegateObject.h"
-#import "YHNavigationPopAnimated.h"
 #import "UIViewController+YHNavigation.h"
 #import "YHNavigationFullScreenPopGesture.h"
 
@@ -38,16 +37,16 @@
 
 - (void)panGestureAction:(UIPanGestureRecognizer *)gesture {
     // 进度
-    CGFloat progress = [gesture translationInView:gesture.view].x / gesture.view.bounds.size.width;
+    CGFloat progress = [gesture translationInView:gesture.view].x / gesture.view.bounds.size.width * 1.2;
+    progress = MIN(1.0f, MAX(0.0f, progress));
     CGPoint velocity = [gesture velocityInView:gesture.view];
-    
     if (gesture.state == UIGestureRecognizerStateBegan) {
         self.popTransition = [UIPercentDrivenInteractiveTransition new];
         [self.navigationController popViewControllerAnimated:YES];
     } else if (gesture.state == UIGestureRecognizerStateChanged) {
         [self.popTransition updateInteractiveTransition:progress];
     } else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
-        if (velocity.x > 500 || progress > CGRectGetWidth(self.navigationController.view.bounds) / 2) {
+        if (velocity.x > 500 || progress > 0.5) {
             [self.popTransition finishInteractiveTransition];
         } else {
             [self.popTransition cancelInteractiveTransition];
@@ -77,18 +76,12 @@
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC  API_AVAILABLE(ios(7.0)){
-    if (self.popTransition && operation == UINavigationControllerOperationPop) {
-        return [[YHNavigationPopAnimated alloc] init];
-    }
-    return nil;
+    return self.navigationController.pushPopAnimated;
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                                    interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
-    if (self.popTransition && [animationController isKindOfClass:[YHNavigationPopAnimated class]]) {
-        return self.popTransition;
-    }
-    return nil;
+    return self.popTransition;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

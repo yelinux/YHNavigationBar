@@ -37,6 +37,13 @@
     return [self.topViewController supportedInterfaceOrientations];
 }
 
+-(YHNavigationBaseAnimated *)pushPopAnimated{
+    if (_pushPopAnimated == nil) {
+        _pushPopAnimated = [[YHNavigationTransitionAnimated alloc] init];
+    }
+    return _pushPopAnimated;
+}
+
 /*
 #pragma mark - Navigation
 

@@ -24,8 +24,8 @@
 }
 
 #pragma mark - UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    if (self.navigationController.viewControllers.count > 1) {
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer{
+    if (self.navigationController.viewControllers.count > 1 && [gestureRecognizer translationInView:gestureRecognizer.view].x > 0) {
         UIViewController *visibleVC = self.navigationController.visibleViewController;
         if (visibleVC.yh_interactivePopType == YHViewControllerInteractivePopTypeFullScreen) {
             return YES;

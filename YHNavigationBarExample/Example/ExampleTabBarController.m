@@ -31,6 +31,7 @@ isHiddenNavgationBar:(BOOL)isHidden
     vc.title = title;
     vc.yh_prefersNavigationBarHidden = isHidden;
     YHNavigationController *nav = [[YHNavigationController alloc] initWithRootViewController:vc];
+    nav.pushPopAnimated = [[YHNavigationScaleAnimated alloc] init];
     nav.navigationBar.translucent = translucent;//是否透明
     if (@available(iOS 13.0, *)) {
         UINavigationBarAppearance *appearnace = [[UINavigationBarAppearance alloc] init];

@@ -17,12 +17,14 @@
 		812569F7262D18B500B8758D /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 812569F5262D18B500B8758D /* ExampleViewController.xib */; };
 		81256A00262D1E6200B8758D /* YHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 812569FF262D1E6200B8758D /* YHNavigationController.m */; };
 		81256A0F262D287C00B8758D /* YHNavigationDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 81256A0E262D287C00B8758D /* YHNavigationDelegateObject.m */; };
-		81256A18262D517B00B8758D /* YHNavigationPopAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 81256A17262D517B00B8758D /* YHNavigationPopAnimated.m */; };
 		81256A22262D73AE00B8758D /* UIViewController+YHNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81256A21262D73AE00B8758D /* UIViewController+YHNavigation.m */; };
 		81256A2B262D867700B8758D /* ScrollViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81256A2A262D867700B8758D /* ScrollViewTestViewController.m */; };
+		813432B727D1AC8200D1A765 /* YHNavigationBaseAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 813432B627D1AC8200D1A765 /* YHNavigationBaseAnimated.m */; };
+		813432BA27D1AFC800D1A765 /* YHNavigationScaleAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 813432B927D1AFC800D1A765 /* YHNavigationScaleAnimated.m */; };
 		8168B589262E721A00C24B9B /* ExampleTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8168B588262E721A00C24B9B /* ExampleTabBarController.m */; };
 		8168B58F262E81E000C24B9B /* YHNavigationFullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8168B58E262E81E000C24B9B /* YHNavigationFullScreenPopGesture.m */; };
 		81CD261C262FCE49004741B9 /* ExampleTranslucentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CD261B262FCE49004741B9 /* ExampleTranslucentViewController.m */; };
+		81D40F8227D09893000D63E9 /* YHNavigationTransitionAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D40F8127D09893000D63E9 /* YHNavigationTransitionAnimated.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +65,14 @@
 		812569FF262D1E6200B8758D /* YHNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationController.m; sourceTree = "<group>"; };
 		81256A0D262D287C00B8758D /* YHNavigationDelegateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationDelegateObject.h; sourceTree = "<group>"; };
 		81256A0E262D287C00B8758D /* YHNavigationDelegateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationDelegateObject.m; sourceTree = "<group>"; };
-		81256A16262D517B00B8758D /* YHNavigationPopAnimated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationPopAnimated.h; sourceTree = "<group>"; };
-		81256A17262D517B00B8758D /* YHNavigationPopAnimated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationPopAnimated.m; sourceTree = "<group>"; };
 		81256A20262D73AE00B8758D /* UIViewController+YHNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YHNavigation.h"; sourceTree = "<group>"; };
 		81256A21262D73AE00B8758D /* UIViewController+YHNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YHNavigation.m"; sourceTree = "<group>"; };
 		81256A29262D867700B8758D /* ScrollViewTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTestViewController.h; sourceTree = "<group>"; };
 		81256A2A262D867700B8758D /* ScrollViewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTestViewController.m; sourceTree = "<group>"; };
+		813432B527D1AC8200D1A765 /* YHNavigationBaseAnimated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationBaseAnimated.h; sourceTree = "<group>"; };
+		813432B627D1AC8200D1A765 /* YHNavigationBaseAnimated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationBaseAnimated.m; sourceTree = "<group>"; };
+		813432B827D1AFC800D1A765 /* YHNavigationScaleAnimated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationScaleAnimated.h; sourceTree = "<group>"; };
+		813432B927D1AFC800D1A765 /* YHNavigationScaleAnimated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationScaleAnimated.m; sourceTree = "<group>"; };
 		8168B587262E721A00C24B9B /* ExampleTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTabBarController.h; sourceTree = "<group>"; };
 		8168B588262E721A00C24B9B /* ExampleTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTabBarController.m; sourceTree = "<group>"; };
 		8168B58D262E81E000C24B9B /* YHNavigationFullScreenPopGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationFullScreenPopGesture.h; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		81CD25F8262FC1C6004741B9 /* YHNavigationKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationKit.h; sourceTree = "<group>"; };
 		81CD261A262FCE49004741B9 /* ExampleTranslucentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTranslucentViewController.h; sourceTree = "<group>"; };
 		81CD261B262FCE49004741B9 /* ExampleTranslucentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTranslucentViewController.m; sourceTree = "<group>"; };
+		81D40F8027D09893000D63E9 /* YHNavigationTransitionAnimated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHNavigationTransitionAnimated.h; sourceTree = "<group>"; };
+		81D40F8127D09893000D63E9 /* YHNavigationTransitionAnimated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHNavigationTransitionAnimated.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +170,16 @@
 				812569FF262D1E6200B8758D /* YHNavigationController.m */,
 				81256A0D262D287C00B8758D /* YHNavigationDelegateObject.h */,
 				81256A0E262D287C00B8758D /* YHNavigationDelegateObject.m */,
-				81256A16262D517B00B8758D /* YHNavigationPopAnimated.h */,
-				81256A17262D517B00B8758D /* YHNavigationPopAnimated.m */,
 				81256A20262D73AE00B8758D /* UIViewController+YHNavigation.h */,
 				81256A21262D73AE00B8758D /* UIViewController+YHNavigation.m */,
 				8168B58D262E81E000C24B9B /* YHNavigationFullScreenPopGesture.h */,
 				8168B58E262E81E000C24B9B /* YHNavigationFullScreenPopGesture.m */,
+				813432B527D1AC8200D1A765 /* YHNavigationBaseAnimated.h */,
+				813432B627D1AC8200D1A765 /* YHNavigationBaseAnimated.m */,
+				81D40F8027D09893000D63E9 /* YHNavigationTransitionAnimated.h */,
+				81D40F8127D09893000D63E9 /* YHNavigationTransitionAnimated.m */,
+				813432B827D1AFC800D1A765 /* YHNavigationScaleAnimated.h */,
+				813432B927D1AFC800D1A765 /* YHNavigationScaleAnimated.m */,
 			);
 			path = YHNavigationBar;
 			sourceTree = "<group>";
@@ -319,15 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81256A18262D517B00B8758D /* YHNavigationPopAnimated.m in Sources */,
 				81CD261C262FCE49004741B9 /* ExampleTranslucentViewController.m in Sources */,
 				8168B58F262E81E000C24B9B /* YHNavigationFullScreenPopGesture.m in Sources */,
 				81256A2B262D867700B8758D /* ScrollViewTestViewController.m in Sources */,
 				81256A0F262D287C00B8758D /* YHNavigationDelegateObject.m in Sources */,
+				813432B727D1AC8200D1A765 /* YHNavigationBaseAnimated.m in Sources */,
 				81256A00262D1E6200B8758D /* YHNavigationController.m in Sources */,
 				81256A22262D73AE00B8758D /* UIViewController+YHNavigation.m in Sources */,
 				8168B589262E721A00C24B9B /* ExampleTabBarController.m in Sources */,
+				81D40F8227D09893000D63E9 /* YHNavigationTransitionAnimated.m in Sources */,
 				812569F6262D18B500B8758D /* ExampleViewController.m in Sources */,
+				813432BA27D1AFC800D1A765 /* YHNavigationScaleAnimated.m in Sources */,
 				812569A8262D150A00B8758D /* AppDelegate.m in Sources */,
 				812569B9262D150D00B8758D /* main.m in Sources */,
 			);

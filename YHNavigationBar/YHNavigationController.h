@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHNavigationTransitionAnimated.h"
+#import "YHNavigationScaleAnimated.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +23,7 @@ typedef NS_ENUM(NSInteger , YHNavigationInteractivePopType) {
 @interface YHNavigationController : UINavigationController
 
 @property (assign, nonatomic) YHNavigationInteractivePopType interactivePopType;
+@property (strong, nonatomic) YHNavigationBaseAnimated *pushPopAnimated;
 
 @end
 
