@@ -66,7 +66,9 @@
     if (!fromViewController.navigationController.navigationBar.translucent && !fromViewController.yh_prefersNavigationBarHidden) {
         CGFloat marginTop = fromViewController.navigationController.navigationBar.frame.size.height;
         if (@available(iOS 11.0, *)) {
-            marginTop += fromView.window.safeAreaInsets.top;
+            if ([fromView.window convertRect:fromViewController.navigationController.view.frame fromView:fromViewController.navigationController.view.superview].origin.y == 0) {
+                marginTop += fromView.window.safeAreaInsets.top;
+            }
         }
         fromFrame.origin.y += marginTop;
         fromFrame.size.height -= marginTop;
@@ -75,7 +77,9 @@
     if (!toViewController.navigationController.navigationBar.translucent && !toViewController.yh_prefersNavigationBarHidden) {
         CGFloat marginTop = toViewController.navigationController.navigationBar.frame.size.height;
         if (@available(iOS 11.0, *)) {
-            marginTop += toView.window.safeAreaInsets.top;
+            if ([toView.window convertRect:toViewController.navigationController.view.frame fromView:toViewController.navigationController.view.superview].origin.y == 0) {
+                marginTop += toView.window.safeAreaInsets.top;
+            }
         }
         toFrame.origin.y += marginTop;
         toFrame.size.height -= marginTop;
