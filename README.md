@@ -1,6 +1,9 @@
 # YHNavigationBar
 UINavigationController封装，支持全屏侧滑pop，导航栏显示隐藏更便捷，非入侵。
 
+## 推荐
+YHNavigationBar需要继承，侵入性较高，推荐使用[YHTransitionKit](https://github.com/yelinux/YHTransitionKit)
+
 ## Features
 ![示例](./preview/example.gif)
 
